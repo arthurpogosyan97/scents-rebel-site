@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аромасвечи | Магазин авторских свечей</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Аромасвечи">
+        <span class="brand-mark"></span>
+        <span>SCENTS REBEL</span>
+      </a>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#sets">Наборы</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#studio">Студия</a>
+      </nav>
+      <button class="cart-button" type="button" data-open-cart aria-label="Открыть корзину">
+        <span class="cart-icon" aria-hidden="true">+</span>
+        <span class="cart-label">Корзина</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="smoke-field" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">ручная заливка · натуральный воск · тихие ритуалы</p>
+          <h1>Аромасвечи для дома, который выдыхает</h1>
+          <p class="hero-text">Соберите настроение вечера: древесные, ягодные, цитрусовые и пряные свечи в керамике и стекле.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#catalog">Выбрать аромат</a>
+            <button class="secondary-link" type="button" data-open-builder>Собрать набор</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Преимущества">
+        <div>
+          <strong>до 35 ч</strong>
+          <span>ровное горение</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>соевый воск</span>
+        </div>
+        <div>
+          <strong>подарочно</strong>
+          <span>упаковка в каждом заказе</span>
+        </div>
+      </section>
+
+      <section class="catalog-shell" id="catalog">
+        <div class="section-heading">
+          <p class="eyebrow">каталог</p>
+          <h2>Выберите аромат под момент</h2>
+        </div>
+
+        <div class="shop-layout">
+          <aside class="filters" aria-label="Фильтры каталога">
+            <div class="filter-group">
+              <label for="search">Поиск</label>
+              <input id="search" type="search" placeholder="ваниль, лес, цитрус" data-search />
+            </div>
+            <div class="filter-group">
+              <span>Семейство</span>
+              <div class="chips" data-family-filters></div>
+            </div>
+            <div class="filter-group">
+              <span>Настроение</span>
+              <div class="chips" data-mood-filters></div>
+            </div>
+            <div class="filter-group">
+              <label for="price">Цена до <strong data-price-value>4200 ₽</strong></label>
+              <input id="price" type="range" min="1600" max="4200" step="100" value="4200" data-price />
+            </div>
+            <div class="filter-row">
+              <label class="toggle">
+                <input type="checkbox" data-favorites-only />
+                <span>Только избранное</span>
+              </label>
+              <button class="text-button" type="button" data-reset>Сбросить</button>
+            </div>
+          </aside>
+
+          <div class="catalog-area">
+            <div class="catalog-toolbar">
+              <p data-result-count>0 товаров</p>
+              <select data-sort aria-label="Сортировка">
+                <option value="popular">Сначала популярные</option>
+                <option value="price-asc">Цена по возрастанию</option>
+                <option value="price-desc">Цена по убыванию</option>
+              </select>
+            </div>
+            <div class="product-grid" data-products></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="builder" id="sets">
+        <div>
+          <p class="eyebrow">подарочные наборы</p>
+          <h2>Конструктор уютного вечера</h2>
+          <p>Выберите три свечи, а мы добавим хлопковый фитиль-триммер, открытку и плотную коробку с лентой.</p>
+        </div>
+        <div class="builder-panel">
+          <div class="builder-slots" data-builder-slots></div>
+          <div class="builder-total">
+            <span>Набор</span>
+            <strong data-builder-total>0 ₽</strong>
+          </div>
+          <button class="primary-button" type="button" data-add-set>Добавить набор</button>
+        </div>
+      </section>
+
+      <section class="delivery" id="delivery">
+        <div class="delivery-copy">
+          <p class="eyebrow">доставка и оплата</p>
+          <h2>Довезем аромат бережно</h2>
+          <p>Свечи упаковываются в плотную коробку с крафтовым наполнителем, чтобы стекло, керамика и фитиль приехали без сюрпризов.</p>
+        </div>
+        <div class="delivery-grid">
+          <article class="delivery-card">
+            <span class="delivery-icon" aria-hidden="true">1</span>
+            <h3>По городу</h3>
+            <p>Курьером за 1-2 дня. Стоимость 450 ₽, бесплатно при заказе от 7000 ₽.</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-icon" aria-hidden="true">2</span>
+            <h3>По России</h3>
+            <p>СДЭК или Boxberry от 3 дней. Точная стоимость считается после выбора города.</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-icon" aria-hidden="true">3</span>
+            <h3>Самовывоз</h3>
+            <p>Из студии после подтверждения заказа. Мы напишем, когда набор будет готов.</p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-icon" aria-hidden="true">4</span>
+            <h3>Оплата</h3>
+            <p>Онлайн, переводом или при получении. Для подарков чек не вкладываем в коробку.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="studio" id="studio">
+        <div class="studio-copy">
+          <p class="eyebrow">студия</p>
+          <h2>Малые партии, точные рецептуры</h2>
+          <p>Каждая свеча проходит тест горения, чтобы аромат раскрывался ровно, а воск не тоннелировал. Банки можно вернуть на повторную заливку со скидкой.</p>
+        </div>
+        <div class="studio-metrics">
+          <div><strong>18</strong><span>ароматов в сезонной карте</span></div>
+          <div><strong>92%</strong><span>растительного воска в смеси</span></div>
+          <div><strong>1:1</strong><span>помощь с подбором подарка</span></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="cart-drawer" data-cart aria-hidden="true">
+      <div class="cart-backdrop" data-close-cart></div>
+      <aside class="cart-panel" aria-label="Корзина">
+        <div class="cart-head">
+          <h2>Корзина</h2>
+          <button class="icon-button" type="button" data-close-cart aria-label="Закрыть корзину">×</button>
+        </div>
+        <div class="cart-items" data-cart-items></div>
+        <div class="promo">
+          <input type="text" placeholder="Промокод" data-promo />
+          <button type="button" data-apply-promo>Применить</button>
+        </div>
+        <p class="promo-note" data-promo-note></p>
+        <div class="cart-summary">
+          <div><span>Товары</span><strong data-subtotal>0 ₽</strong></div>
+          <div><span>Скидка</span><strong data-discount>0 ₽</strong></div>
+          <div><span>Доставка</span><strong data-delivery>0 ₽</strong></div>
+          <div class="total"><span>Итого</span><strong data-total>0 ₽</strong></div>
+        </div>
+        <button class="primary-button checkout-button" type="button" data-checkout>Оформить заказ</button>
+      </aside>
+    </div>
+
+    <dialog class="checkout-modal" data-modal>
+      <form method="dialog" class="checkout-form">
+        <button class="icon-button modal-close" value="cancel" aria-label="Закрыть">×</button>
+        <p class="eyebrow">оформление</p>
+        <h2>Куда отправить свечи?</h2>
+        <label>Имя<input required name="name" type="text" placeholder="Анна" /></label>
+        <label>Телефон<input required name="phone" type="tel" placeholder="+7 900 000-00-00" /></label>
+        <label>Адрес<textarea required name="address" placeholder="Город, улица, дом, квартира"></textarea></label>
+        <button class="primary-button" value="confirm">Подтвердить заказ</button>
+      </form>
+    </dialog>
+
+    <div class="welcome-promo" data-welcome-promo aria-live="polite">
+      <button class="welcome-close" type="button" data-close-promo aria-label="Закрыть промокод">×</button>
+      <span class="promo-spark" aria-hidden="true"></span>
+      <div>
+        <p>Первый заказ</p>
+        <strong>Введите промокод <span>AROMA10</span> и получите скидку 10%</strong>
+      </div>
+      <button type="button" data-use-promo>Применить</button>
+    </div>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
